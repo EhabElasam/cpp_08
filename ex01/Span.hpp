@@ -6,7 +6,7 @@
 /*   By: eelasam <eelasam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:02:37 by eelasam           #+#    #+#             */
-/*   Updated: 2023/11/08 11:43:00 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/11/09 12:13:19 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,20 @@ class Span {
         
         Span(const Span& other);
         Span& operator=(const Span& other);
+        
+        // template <typename Iterator>
+        // void addNumberRange(Iterator begin, Iterator end);
+        template <typename Iterator>
+        void addNumberRange(Iterator begin, Iterator end)
+        {
+            while (begin != end)
+            {
+                addNumber(*begin);
+                ++begin;
+            }
+        };
+        
+        void fillWithRandomNumbers(int count);
 
          void printValues() const;
          unsigned int size() const;
@@ -44,8 +58,8 @@ class Span {
         };
         class SpanException : public std::exception
         {
+            public:
             const char* what() const throw()
-            { return "Not enough numbers to find a span."; }
+            { return "No span can be found."; }
         };
-
 };

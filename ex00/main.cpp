@@ -6,7 +6,7 @@
 /*   By: eelasam <eelasam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:00:42 by eelasam           #+#    #+#             */
-/*   Updated: 2023/11/08 12:56:42 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/11/09 09:51:46 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int main()
     }
     try
     {
-        int valueToFind = 6;
+        int valueToFind = 4;
         int index = easyfind(myContainer, valueToFind);
         std::cout << "\nValue " << valueToFind << " found at index: " << index << std::endl << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cout << e.what() << " vector"<< std::endl;
+        std::cout << std::endl << e.what() << " vector"<< std::endl << std::endl;
     }
     
     std::cout << "*******************" << std::endl;
@@ -44,13 +44,13 @@ int main()
     }
     try
     {
-        int valueToFind = 2;
+        int valueToFind = 10;
         int index = easyfind(dequeContainer, valueToFind);
         std::cout << "\nValue " << valueToFind << " found at index: " << index << std::endl << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cout << e.what() << " deque" <<std::endl;
+        std::cout << std::endl <<e.what() << " deque" <<std::endl << std::endl;
     }
 
     std::cout << "*******************" << std::endl;
@@ -68,13 +68,13 @@ int main()
     
     try
     {
-        int valueToFind = 4;
+        int valueToFind = 2;
         int index = easyfind(listContainer, valueToFind);
         std::cout << "\nValue " << valueToFind << " found at index: " << index << std::endl << std::endl;
     }
     catch(const std::exception& e)
     {
-        std::cout << e.what() << " list" <<std::endl;
+        std::cout << std::endl << e.what() << " list" << std::endl << std::endl;
     }
     std::cout << "*******************" << std::endl;
 

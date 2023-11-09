@@ -6,7 +6,7 @@
 /*   By: eelasam <eelasam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:02:24 by eelasam           #+#    #+#             */
-/*   Updated: 2023/11/08 11:43:27 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/11/09 12:17:05 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <iostream>
 #include <limits>
 
-Span::Span() : _max_size(7)
+Span::Span() : _max_size(0)
 {}
 Span::Span(unsigned int N) : _max_size(N)
 {}
@@ -37,6 +37,7 @@ Span& Span::operator=(const Span& other)
 
 unsigned int Span::size() const
 { return _numbers.size(); }
+
 int Span::operator[](unsigned int index) const
 {
         if (index >= _numbers.size())
@@ -51,6 +52,7 @@ void Span::addNumber(int number)
     if (_numbers.size() >= _max_size)
         throw CapacityException();
     _numbers.push_back(number);
+    //_numbers.insert(_numbers.begin(), number);
 }
 
 int Span::shortestSpan()
@@ -81,6 +83,9 @@ int Span::longestSpan()
 
     return max - min;
 }
+
+
+
 void Span::printValues() const
 {
     std::cout << "Span values: ";
@@ -91,4 +96,13 @@ void Span::printValues() const
             std::cout << ", ";
     }
     std::cout << std::endl;
+}
+
+void Span::fillWithRandomNumbers(int count)
+{
+    std::srand(time(0));
+    for (int i = 0; i < count; ++i)
+    {
+        addNumber(rand());
+    }
 }
