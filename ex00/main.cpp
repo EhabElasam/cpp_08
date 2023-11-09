@@ -6,7 +6,7 @@
 /*   By: eelasam <eelasam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:00:42 by eelasam           #+#    #+#             */
-/*   Updated: 2023/11/09 09:51:46 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:24:50 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int main()
     std::list<int> listContainer;
     for (int i = 0; i < 10; ++i)
     {
-        listContainer.push_back(i * 2); //make it full with ivin Nr.
+        listContainer.push_back(i * 2);
     }
     
     int index = 0;
