@@ -6,7 +6,7 @@
 /*   By: eelasam <eelasam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:02:48 by eelasam           #+#    #+#             */
-/*   Updated: 2023/11/09 12:21:03 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:11:52 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ std::cout << sp.longestSpan() << std::endl;
 
 {
     Span sp = Span(10000);
+    std::srand(time(0));
     std::vector<int> randomNumbers(10000);
     std::generate(randomNumbers.begin(), randomNumbers.end(), std::rand); 
     

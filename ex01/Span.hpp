@@ -6,7 +6,7 @@
 /*   By: eelasam <eelasam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:02:37 by eelasam           #+#    #+#             */
-/*   Updated: 2023/11/09 12:13:19 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/11/09 15:12:20 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,24 @@ class Span {
         
         // template <typename Iterator>
         // void addNumberRange(Iterator begin, Iterator end);
-        template <typename Iterator>
+        /* template <typename Iterator>
         void addNumberRange(Iterator begin, Iterator end)
         {
             while (begin != end)
             {
+                
                 addNumber(*begin);
                 ++begin;
             }
-        };
+        }; */
+
+        template <typename Iterator>
+        void addNumberRange(Iterator begin, Iterator end) {
+            size_t distance = static_cast<size_t>(std::distance(begin, end));
+            if (distance > _max_size - _numbers.size())
+                throw CapacityException();
+            _numbers.insert(_numbers.end(), begin, end);
+            };
         
         void fillWithRandomNumbers(int count);
 

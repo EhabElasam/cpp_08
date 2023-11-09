@@ -6,7 +6,7 @@
 /*   By: eelasam <eelasam@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:02:24 by eelasam           #+#    #+#             */
-/*   Updated: 2023/11/09 12:17:05 by eelasam          ###   ########.fr       */
+/*   Updated: 2023/11/09 16:09:23 by eelasam          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int Span::shortestSpan()
     int shortest = std::numeric_limits<int>::max();
     for (size_t i = 0; i < sorted_numbers.size() - 1; ++i)
     {
+        if (sorted_numbers[i + 1] == sorted_numbers[i])
+            return 0;
         int span = sorted_numbers[i + 1] - sorted_numbers[i];
         if (span < shortest)
             shortest = span;
